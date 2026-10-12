@@ -47,7 +47,10 @@ export default function Combos({ onPick }) {
         <div className="combo-list active" role="tabpanel" id={`panel-${active}`} aria-labelledby={`tab-${active}`} key={active}>
           {COMBOS[active].map((c, i) => (
             <div className="combo" key={i}>
-              <div className="num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="thumb">
+                <img src={c.img} alt="" width="240" height="240" loading="lazy" decoding="async" />
+                <span className="num">{String(i + 1).padStart(2, '0')}</span>
+              </div>
               <div className="items">
                 <div className="lbl">{active === 'Male' ? 'For Him' : 'For Her'} · {c.items.length} services</div>
                 <ul>{c.items.map((x) => <li key={x}>{x}</li>)}</ul>

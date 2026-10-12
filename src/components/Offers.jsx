@@ -12,10 +12,14 @@ export default function Offers({ onPick }) {
         <div className="offer-grid">
           {OFFERS.map((o) => (
             <div className="offer reveal" key={o.name}>
-              <div className="emo" aria-hidden="true">{o.emoji}</div>
-              <h3 className="offer-name">{o.name}</h3>
-              <div className="price">{rupee(o.price)}</div>
-              <button type="button" className="book" onClick={() => onPick(offerLabel(o))}>Book this</button>
+              <div className="offer-img">
+                <img src={o.img} alt="" width="600" height="450" loading="lazy" decoding="async" />
+              </div>
+              <div className="offer-body">
+                <h3 className="offer-name">{o.name}</h3>
+                <div className="price">{rupee(o.price)}</div>
+                <button type="button" className="book" onClick={() => onPick(offerLabel(o))}>Book this</button>
+              </div>
             </div>
           ))}
         </div>
